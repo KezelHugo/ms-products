@@ -21,6 +21,7 @@ import com.msproducts.dto.ProductDTO;
 import com.msproducts.dto.ProductStockValidationDTO;
 import com.msproducts.service.ProductService;
 
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -28,6 +29,7 @@ import jakarta.validation.constraints.NotBlank;
 @Validated
 @RestController
 @RequestMapping("/products")
+@SecurityRequirement(name = "bearerAuth")
 public class ProductController {
 
     private final ProductService productService;
